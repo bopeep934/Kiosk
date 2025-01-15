@@ -30,20 +30,20 @@ public class Main {
         burgers.add(m3);
         burgers.add(m4);
 //버거 메뉴 리스트에 추가.
-        MenuItem d1 = new MenuItem("코카콜라", 1700, "시원한 콜라입니다.");
-        MenuItem d2 = new MenuItem("아메리카노", 1000, "차가운 아이스입니다. 뜨거운 음료는 점원에게 말씀해주세요.");
-        MenuItem d3 = new MenuItem("환타 오렌지", 1700, "환타 오렌지입니다.");
-        MenuItem d4 = new MenuItem("망고 에이드", 1500, "망고맛이 나는 에이드입니다.");
+        MenuItem d1 = new MenuItem("코카콜라", 1.7, "시원한 콜라입니다.");
+        MenuItem d2 = new MenuItem("아메리카노", 1, "차가운 아이스입니다. 뜨거운 음료는 점원에게 말씀해주세요.");
+        MenuItem d3 = new MenuItem("환타 오렌지", 1.7, "환타 오렌지입니다.");
+        MenuItem d4 = new MenuItem("망고 에이드", 1.5, "망고맛이 나는 에이드입니다.");
 //음료 메뉴 개발
         drinks.add(d1);
         drinks.add(d2);
         drinks.add(d3);
         drinks.add(d4);
 //음료 메뉴 리스트에 추가
-        MenuItem c1 = new MenuItem("치즈스틱", 1000, "치즈가 가득 들어있습니다.");
-        MenuItem c2 = new MenuItem("어니언링", 2000, "양파튀김입니다.");
-        MenuItem c3 = new MenuItem("프렌치프라이", 1600, "감자튀김입니다.");
-        MenuItem c4 = new MenuItem("바삭킹", 10000, "치킨윙입니다.");
+        MenuItem c1 = new MenuItem("치즈스틱", 1, "치즈가 가득 들어있습니다.");
+        MenuItem c2 = new MenuItem("어니언링", 2, "양파튀김입니다.");
+        MenuItem c3 = new MenuItem("프렌치프라이", 1.6, "감자튀김입니다.");
+        MenuItem c4 = new MenuItem("바삭킹", 10, "치킨윙입니다.");
 //사이드 메뉴 개발
         desserts.add(c1);
         desserts.add(c2);

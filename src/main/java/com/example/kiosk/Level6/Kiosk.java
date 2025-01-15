@@ -41,10 +41,10 @@ public class Kiosk {
                 System.out.println(num + ". Cancel");
             }
 
-
             try {
                 System.out.println("보고 싶은 메인메뉴 번호를 입력하세요.");//사용자에게 입력받기
                 k = sc.nextInt();
+
 
                 if (k == 0) {//0번은 종료
                     System.out.println("프로그램을 종료합니다.");
@@ -52,16 +52,18 @@ public class Kiosk {
                 } else if (k <= menu.size()) { //그 외는 다시 무한 루프
                     menuList = menu.get(k - 1);
                     menuList.printMenu(); //출력
-                } else if (k == menu.size() + 1 && k == menu.size() + 2) {
+                } else if (k == menu.size() + 1) {
+
                     if (cartList.getCartMenu() == null) {
-                        System.out.println("메뉴에 있는 번호를 입력하세요.");
+                        System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
                         continue;
                     } else {
                         System.out.println("아래와 같이 주문 하시겠습니까?");
                         cartList.printCart();
+                        String sum = String.format("%.1f", cartList.sumPrice());
 
                         System.out.println("[ Total ]");
-                        System.out.println("W " + cartList.sumPrice());
+                        System.out.println("W " + sum);
 
                         System.out.println("1.주문");
                         System.out.println("2.메뉴판");
@@ -69,18 +71,24 @@ public class Kiosk {
                         int m = sc.nextInt();
 
                         if (m == 1) {
-                            System.out.println("주문이 완료되었습니다. 금액은 W " + cartList.sumPrice() + " 입니다.");
+                            System.out.println("주문이 완료되었습니다. 금액은 W " + sum + " 입니다.");
+                            cartList.removeCart();
+                            continue;
                         } else if (m == 2) {
+                            System.out.println("메인메뉴로 돌아갑니다.");
                             continue;
                         }
-
                     }
-                } else if (k > num + 1) { //메뉴에 있는 번호 이상을 입력하면
-                    System.out.println("메뉴에 있는 번호를 입력하세요.");
+                } else if (k == 5) {
+                    System.out.println("장바구니 상품을 모두 취소했습니다.");
+                    cartList.removeCart();
+                    continue;
+                } else if (k > num) { //메뉴에 있는 번호 이상을 입력하면
+                    System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
                     continue;
                 }
                 //////////////// 2.두번째 메뉴 사용자에게 입력받기
-                System.out.println("보고 싶은 메뉴 번호를 입력하세요.");
+                System.out.println("구입하고 싶은 메뉴 번호를 입력하세요.");
                 k = sc.nextInt();
 
                 if (k == 0) { //0번은 뒤로가기
