@@ -49,10 +49,10 @@ public class Kiosk {
                 if (k == 0) {//0번은 종료
                     System.out.println("프로그램을 종료합니다.");
                     break;
-                } else if (k < num) { //그 외는 다시 무한 루프
+                } else if (k <= menu.size()) { //그 외는 다시 무한 루프
                     menuList = menu.get(k - 1);
                     menuList.printMenu(); //출력
-                } else if (k == num && k == num + 1) {
+                } else if (k == menu.size() + 1 && k == menu.size() + 2) {
                     if (cartList.getCartMenu() == null) {
                         System.out.println("메뉴에 있는 번호를 입력하세요.");
                         continue;
