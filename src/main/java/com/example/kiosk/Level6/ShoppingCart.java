@@ -9,7 +9,6 @@ public class ShoppingCart {
 
     private MenuItem cartItem;
     private double totalPrice = 0;
-    private int num;
 
     public ShoppingCart() {
 
@@ -29,11 +28,6 @@ public class ShoppingCart {
 
         cartList.add(item);
 
-    }
-
-    public int getNum() {
-
-        return num;
     }
 
     public List getCartMenu() {
@@ -58,7 +52,6 @@ public class ShoppingCart {
         for (MenuItem item : cartList) {
             if (!lastCartList.contains(item))
                 lastCartList.add(item);
-
         }
 
         for (MenuItem item : lastCartList) {
