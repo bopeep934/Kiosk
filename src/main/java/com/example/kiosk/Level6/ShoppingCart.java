@@ -5,6 +5,8 @@ import java.util.List;
 
 public class ShoppingCart {
     private List<MenuItem> cartList = new ArrayList<>();
+    private List<MenuItem> lastCartList = new ArrayList<>();// 중복값을 제거한 장바구니 메뉴
+
     private MenuItem cartItem;
     private double totalPrice = 0;
     private int num;
@@ -14,6 +16,9 @@ public class ShoppingCart {
     }
 
     public double sumPrice() {
+
+        totalPrice = 0;
+
         for (MenuItem item : cartList)
             totalPrice += item.getPrice();
 
@@ -21,10 +26,18 @@ public class ShoppingCart {
     }
 
     public void addCartItem(MenuItem item) {
+
         cartList.add(item);
+
+    }
+
+    public int getNum() {
+
+        return num;
     }
 
     public List getCartMenu() {
+
         if (cartList.size() > 0)
             return cartList;
         else
@@ -37,11 +50,19 @@ public class ShoppingCart {
 
     public void removeCart() {
         cartList.clear();
+        lastCartList.clear();
     }
 
     public void printCart() {//처음에 없는 번호 출력
+
         for (MenuItem item : cartList) {
-            item.printMenuItem();
+            if (!lastCartList.contains(item))
+                lastCartList.add(item);
+
+        }
+
+        for (MenuItem item : lastCartList) {
+            item.printMenuItem2();
         }
     }
 }
