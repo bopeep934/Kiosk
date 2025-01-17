@@ -2,11 +2,14 @@ package com.example.kiosk.Level6;
 
 import java.util.List;
 
-public class Menu {
+public class Menu<T> {
     private String name;
-    private List<MenuItem> menuItems;
+    //private List<MenuItem> menuIte;
+    private List<T> menuItems;
 
-    public Menu(String name, List menuItems) {
+    //Stream<MenuItem> list = menuItems.stream();
+
+    public Menu(String name, List<T> menuItems) {
         this.name = name;
         this.menuItems = menuItems;
     }
@@ -16,7 +19,7 @@ public class Menu {
         return name;
     }
 
-    public List<MenuItem> getMenuItems() {
+    public List<T> getMenuItems() {
 
         return menuItems;
     }
@@ -25,25 +28,30 @@ public class Menu {
         this.name = name;
     }
 
-    public void setMenuItems(List<MenuItem> menuItems) {
+    public void setMenuItems(List<T> menuItems) {
         this.menuItems = menuItems;
     }
 
     public void printMenu() {
         int num = 1;//1번부터 시작
         System.out.println("[ " + name.toUpperCase() + " MENU ]");
-        for (MenuItem menu : menuItems) {//리스트의 MenuItem의 필드들 출력
+
+        //   menuItems.stream().forEach(System.out::println);
+
+        for (T menu : menuItems) {//리스트의 MenuItem의 필드들 출력
             System.out.print(num + ". ");
-            menu.printMenuItem();
+            MenuItem mi = (MenuItem) menu;
+            mi.printMenuItem();
             num++;
         }
         System.out.println("0. 뒤로가기");
         //  System.out.println("num:" + num);
     }
 
-    public MenuItem getMenuItem(int i) {
+    public T getMenuItem(int i) {
 
         return menuItems.get(i);
     }
 
 }
+

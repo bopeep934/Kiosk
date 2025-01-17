@@ -2,6 +2,7 @@ package com.example.kiosk.Level6;
 
 public class MenuItem {
 
+    private int num = 0;
     private String name;
     private double price;
     private String info;
@@ -15,6 +16,18 @@ public class MenuItem {
 
     public int getCount() {
         return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public String getName() {
@@ -46,7 +59,7 @@ public class MenuItem {
     }
 
     public void printMenuItem2() {
-        System.out.println(name + "  | " + price + "  | " + info + "  |  수량: " + count);
+        System.out.println(num + ". " + name + "  | " + price + "  | " + info + "  |  수량: " + count);
     }
 
     public void countNum() {

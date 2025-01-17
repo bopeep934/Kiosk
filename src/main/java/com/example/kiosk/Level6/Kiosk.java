@@ -65,16 +65,35 @@ public class Kiosk {
                         System.out.println("W " + sum);
 
                         System.out.println("1.주문");
-                        System.out.println("2.메뉴판");
+                        System.out.println("2.취소");
+                        System.out.println("3.메뉴판");
 
                         cartInputNumber = sc.nextInt();
 
                         if (cartInputNumber == 1) {
+
+                            System.out.println("할인 정보를 입력해주세요.");
+
+                            cartList.printDiscount();
+
+                            int d = sc.nextInt();
+
+                            if (d < 5)
+                                sum = String.format("%.1f", cartList.disCount(d));
+//                            else {
+//                                System.out.println("메뉴에 있는 번호를 입력하세요.");
+//                            } 나중에 구현 시간부족
+
                             System.out.println("주문이 완료되었습니다. 금액은 W " + sum + " 입니다.");
                             cartList.removeCart();
                             System.out.println("메인메뉴로 돌아갑니다.");
                             continue;
                         } else if (cartInputNumber == 2) {
+                            System.out.println("취소할 메뉴의 번호를 입력해주세요.");
+                            int sub = sc.nextInt();
+                            cartList.subCartMenu(sub);
+                            continue;
+                        } else if (cartInputNumber == 3) {
                             System.out.println("메인메뉴로 돌아갑니다.");
                             continue;
                         }
@@ -99,7 +118,7 @@ public class Kiosk {
                             break;//메인메뉴로 돌아감
                         } else if (subInputNumber <= menuList.getMenuItems().size()) { //서브메뉴 번호를 선택한 경우
                             System.out.print("선택한 메뉴: ");
-                            selectItem = menuList.getMenuItem(subInputNumber - 1);
+                            selectItem = (MenuItem) menuList.getMenuItem(subInputNumber - 1);
                             selectItem.printMenuItem();
 
                             System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
