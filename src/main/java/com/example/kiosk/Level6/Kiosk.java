@@ -3,6 +3,7 @@ package com.example.kiosk.Level6;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Kiosk {
 
@@ -28,7 +29,7 @@ public class Kiosk {
 
         while (true) {
             num = 1;//1번부터 시작
-            /////////////1. 메인메뉴 출력 후 입력받기
+/////////////////////////////////////////////////////1. 메인메뉴 출력 후 입력받기
             System.out.println("[ MAIN MENU ]");
             for (int i = 0; i < menu.size(); i++) {
                 System.out.println(num + ". " + menu.get(i).getName());//후에 private-getter-setter로 생성
@@ -36,18 +37,21 @@ public class Kiosk {
             }
             System.out.println("0. 종료");
             //       System.out.println("num:" + num);
+
+
+            /////////////////////////////////////// 장바구니에 메뉴아이템이 있으면 추가
             if (cartList.getCartMenu() != null) {
                 System.out.println("[ ORDER MENU ]");
                 System.out.println(num + ". Orders");
                 num++;
                 System.out.println(num + ". Cancel");
             }
-
+////////////////////////////////////////////////////2. 사용자에게 입력받기
             try {
-                System.out.println("보고 싶은 메인메뉴 번호를 입력하세요.");//사용자에게 입력받기
+                System.out.println("보고 싶은 메인메뉴 번호를 입력하세요.");
                 mainInputNumber = sc.nextInt();
 
-
+////////////////////////////////////////////////////3. 번호에 따라 나눔
                 if (mainInputNumber == 0) {//0번은 종료
                     System.out.println("프로그램을 종료합니다.");
                     break;
@@ -95,6 +99,9 @@ public class Kiosk {
                             continue;
                         } else if (cartInputNumber == 3) {
                             System.out.println("메인메뉴로 돌아갑니다.");
+                            continue;
+                        } else if (cartInputNumber > 3) { //메뉴에 있는 번호 이상을 입력하면
+                            System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
                             continue;
                         }
                     }
