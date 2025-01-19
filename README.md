@@ -21,7 +21,7 @@
 - corretto 17.0.3
 - Gradle
 
-## 4️⃣ 기능 구현### Lv 1. 기본적인 키오스크를 프로그래밍해보자
+## 4️⃣ 기능 구현
 ###  🚶‍♀️ 필수 기능 가이드
 
 - [ ]  **햄버거 메뉴 출력 및 선택하기**
@@ -73,9 +73,11 @@
 - [ ]  **`MenuItem` 클래스 생성하기**
     - [ ]  설명 : 개별 음식 항목을 관리하는 클래스입니다. 현재는 햄버거만 관리합니다.
     - [ ]  클래스는 `이름`, `가격`, `설명` 필드를 갖습니다.
-    ```java 
-  public class MenuItem {
+     
 
+ ```java 
+     public class MenuItem {
+ ```
 
 
   |자료형|역할|
@@ -99,21 +101,17 @@
         MenuItem m3=new MenuItem("Cheeseburger" ,6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
         MenuItem m4=new MenuItem("Hamburger" ,5.4, "비프패티를 기반으로 야채가 들어간 기본버거");  ```
         
-        ```
-코드를 입력하세요
 ```
-   - [ ]  `List`를 선언하여 여러 `MenuItem`을 추가합니다.
+- [ ]  `List`를 선언하여 여러 `MenuItem`을 추가합니다.
    
-```
+```java
         List<MenuItem> menuItems = new ArrayList<>();
-``````
-코드를 입력하세요
 ```
+
         
-    - [ ]  반복문을 활용해 `menuItems`를 탐색하면서 하나씩 접근합니다.
+- [ ]  반복문을 활용해 `menuItems`를 탐색하면서 하나씩 접근합니다.
     
-```
-``````java
+```java
       while(true) {
             num=1;//1번부터 시작
             System.out.println("[ SHAKESHACK MENU ]");
@@ -124,10 +122,9 @@
             }
             System.out.println("0. 종료");
 
-``````
+```
 
-  
-  ### Lv 3. 객체 지향 설계를 적용해 순서 제어를 클래스로 관리하기
+### Lv 3. 객체 지향 설계를 적용해 순서 제어를 클래스로 관리하기
 
 - [ ]  **요구사항이 가지는 의도**
     - [ ]  객체 지향 개념을 학습하고, 데이터를 구조적으로 관리하며 프로그램을 설계하는 방법을 익힙니다.
@@ -138,11 +135,15 @@
     - [ ]  **설명**: 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스입니다.
     
     - [ ]  `MenuItem`을 관리하는 리스트가 필드로 존재합니다.
+     
+
 ```java 
       public class Kiosk {
             
          ...
-  ```
+```
+
+
   |자료형|역할|
   |--|--|
   |menuItems : List<MenuItem> | 계산 결과값을 저장|
@@ -151,9 +152,9 @@
    
   
     
-   - [ ]  `main` 함수에서 관리하던 입력과 반복문 로직은 이제 `start` 함수를 만들어 관리합니다.
+- [ ]  `main` 함수에서 관리하던 입력과 반복문 로직은 이제 `start` 함수를 만들어 관리합니다.
  
-``````java
+```java
    public void start() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -165,24 +166,23 @@
                 num++;
             }
             System.out.println("0. 종료");
-``````
+```
   
-   - [ ]  `List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.
-  ```java 
+- [ ]  `List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.
+```java 
     public Kiosk(List menuItems) {
         this.menuItems = menuItems;
     }
- ``` 
-  - [ ]  `Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니다.
-  ```java
+``` 
+- [ ]  `Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니다.
+```java
       public static void main(String[] args){
     ....
 
         Kiosk kiosk=new Kiosk(menuItems);//메뉴 리스트를 키오스크에 추가
-``````
-코드를 입력하세요
-``````
-###   Lv2, Lv3 실행결과
+```
+
+### Lv2, Lv3 실행결과
 
     
    ![](https://velog.velcdn.com/images/gkinfn/post/03955444-5bae-420e-8503-25182a857d3c/image.PNG)
@@ -200,17 +200,17 @@
     - [ ]  여러 버거들을 포함하는 상위 개념 ‘버거’ 같은 `카테고리 이름` 필드를 갖습니다.
   
     - [ ]  메뉴 카테고리 이름을 반환하는 메서드가 구현되어야 합니다.
-```
-```
-  ```java
+
+
+```java
 public class Menu {
-  ```
+
   
-   |자료형|역할|
+  |자료형|역할|
   |--|--|
   |name : String  | 메뉴 카테고리 명 | 
   |menuItems : List<MenuItem> | 메뉴의 상품 배열|
-  
+```  
 ```java   
   ....
       public String getName() {
@@ -219,12 +219,12 @@ public class Menu {
 
 ```
   
-  ### Lv 5. 캡슐화 적용하기
+### Lv 5. 캡슐화 적용하기
 
 - [ ]  `MenuItem`, `Menu` 그리고 `Kiosk` 클래스의 필드에 직접 접근하지 못하도록 설정합니다.
   
 ```java
- private 
+ private 명령어 붙이기
 ```
 - [ ]  Getter와 Setter 메서드를 사용해 데이터를 관리합니다.
 
@@ -302,14 +302,17 @@ public class ShoppingCart {
                                                          
                                                          ...
                                                          
- ```
+```
+
   |자료형|역할|
   |--|--|
   |- cartItem : MenuItem| 장바구니 상품 리스트 |
   |- totalPrice : double| 장바구니 상품 총액 |
                                                          
-`````` ```
- - [ ]  사용자가 잘못된 선택을 했을 경우 예외를 처리합니다(예: 유효하지 않은 메뉴 번호 입력)
+
+
+- [ ]  사용자가 잘못된 선택을 했을 경우 예외를 처리합니다(예: 유효하지 않은 메뉴 번호 입력)
+
 ```java
 else if (subInputNumber > menuList.getMenuItems().size()) { //메뉴에 있는 번호 이상을 입력하면
                             System.out.println("메뉴에 있는 번호를 입력하세요.");
@@ -320,7 +323,7 @@ else if (subInputNumber > menuList.getMenuItems().size()) { //메뉴에 있는 �
  } catch (InputMismatchException e) { //실수로 문자를 입력했을 때 에러 처리
                 System.out.println("잘못된 입력입니다. 정수를 입력하세요.");
                 sc.nextLine(); // 입력 버퍼 정리
-            }``````
+            }
 ```
                                                          
   
@@ -336,7 +339,7 @@ String sum = String.format("%.1f", cartList.sumPrice());
 System.out.println("[ Total ]");
 System.out.println("W " + sum);
 
-``````
+```
  
 - [ ]  **장바구니 담기 기능**
     - [ ]  메뉴를 클릭하면 장바구니에 추가할 지 물어보고, 입력값에 따라 “추가”, “취소” 처리합니다.
@@ -351,14 +354,13 @@ System.out.println("W " + sum);
    System.out.println("2.취소");
            int c = sc.nextInt();
                                      ...                     
-                                                          ``````
-코드를 입력하세요
-```
+ ```
+
 
                                                          
 - [ ]  **주문 기능**
                                                           
-- [ ]  장바구니에 담긴 모든 항목을 출력합니다.
+ - [ ]  장바구니에 담긴 모든 항목을 출력합니다.
  - [ ]  합산하여 총 금액을 계산하고, “주문하기”를 누르면 장바구니를 초기화합니다.  
 ```java
  System.out.println("주문이 완료되었습니다. 금액은 W " + sum + " 입니다.");
@@ -366,7 +368,7 @@ System.out.println("W " + sum);
  System.out.println("메인메뉴로 돌아갑니다.");
 ```
   
- ### Lv 2. Enum, 람다 & 스트림을 활용한 주문 및 장바구니 관리
+### Lv 2. Enum, 람다 & 스트림을 활용한 주문 및 장바구니 관리
 
 - [ ]  **요구사항이 가지는 의도**
     - [ ]  **의도** : 고급 자바 기능을 활용해 프로그램의 효율성과 코드의 가독성을 개선하는 것을 목표로 합니다.
@@ -391,6 +393,8 @@ public enum Discount {
 ```                                                
                                                           
 - [ ]  주문 시, 사용자 유형에 맞는 할인율 적용해 총 금액 계산
+
+
 ```java 
  public double disCount(int identity) {
 
@@ -430,8 +434,8 @@ public enum Discount {
 - [ ]  기존 장바구니에서 특정 메뉴 빼기 기능을 통한 스트림 활용
 ```java
 String subName = cartList.get(i - 1).getName();
-cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());```
-  ```
+cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());
+```
 
   
 ### 도전과제 실행결과
@@ -452,42 +456,51 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   
   
  ## 6️⃣ 프로그램 사용법
-  1.사용자는 키오스크 메인메뉴에서 주문하고 싶은 상품 카테고리 번호를 입력한다.
+1.사용자는 키오스크 메인메뉴에서 주문하고 싶은 상품 카테고리 번호를 입력한다.
+  
  ![](https://velog.velcdn.com/images/gkinfn/post/15a67434-c180-47b2-9e7f-fb0f6a9abf3e/image.PNG)
 
 
-  2.상품 메뉴에서 주문하고 싶은 상품의 번호를 입력한다.
+2.상품 메뉴에서 주문하고 싶은 상품의 번호를 입력한다.
+  
 ![](https://velog.velcdn.com/images/gkinfn/post/0cb91355-54b4-4a30-80bb-9460684e1a97/image.PNG)
 
 
-  3.상품의 상세정보를 확인 후, 장바구니에 담을지를 선택한다.
+3.상품의 상세정보를 확인 후, 장바구니에 담을지를 선택한다.
   
 ![](https://velog.velcdn.com/images/gkinfn/post/e5778818-5f85-4d6f-a45c-9827e470dfee/image.PNG)
 
-  4.확인 번호를 입력하면, 장바구니에 상품이 추가 되고, 다시 상품 메뉴가 출력된다.
+4.확인 번호를 입력하면, 장바구니에 상품이 추가 되고, 다시 상품 메뉴가 출력된다.
   (취소를 누르면 장바구니에 상품이 추가 되지 않는다.)
+  
 ![](https://velog.velcdn.com/images/gkinfn/post/c24480ce-b2a6-4c04-b1ef-fb16ba9fb563/image.PNG)
 
-  5.주문하고 싶은 상품을 모두 주문 후, 0.뒤로가기 번호를 입력하면(0번을 입력할 때까지 계속 반복) 메인메뉴가 출력된다. 장바구니에 상품이 담긴 경우, 추가 메뉴가 생성된다.
+5.주문하고 싶은 상품을 모두 주문 후, 0.뒤로가기 번호를 입력하면(0번을 입력할 때까지 계속 반복) 메인메뉴가 출력된다. 장바구니에 상품이 담긴 경우, 추가 메뉴가 생성된다.
+
 ![](https://velog.velcdn.com/images/gkinfn/post/30e70109-0db2-422f-911b-4de2dd0d4720/image.PNG)
 
-6.  4.주문하고 번호를 입력하면, 장바구니에 담긴 상품명과 수량, 총 금액이 순서대로 뜨고 사용자는 주문할지 선택한다.
+6. 4.주문하고 번호를 입력하면, 장바구니에 담긴 상품명과 수량, 총 금액이 순서대로 뜨고 사용자는 주문할지 선택한다.
+ 
   ![](https://velog.velcdn.com/images/gkinfn/post/08cedeb2-34fe-4016-893b-7183dee2a251/image.PNG)
 
- 7.  사용자 유형에 따른 할인율이 나오고, 사용자가 번호를 입력하면 총 금액에서 할인율이 적용된 금액으로 주문이 된다. 
+7. 사용자 유형에 따른 할인율이 나오고, 사용자가 번호를 입력하면 총 금액에서 할인율이 적용된 금액으로 주문이 된다. 
   
   ![](https://velog.velcdn.com/images/gkinfn/post/9a4c687f-d54c-4356-b5c5-5403e6913ccf/image.PNG)
   
-  8. 주문이 끝나면, 다시 메인메뉴가 출력되고, 장바구니 상품은 없어졌으므로, 추가메뉴가 생성되지 않는다. 다시 상품 구매로 돌아간다.
+8. 주문이 끝나면, 다시 메인메뉴가 출력되고, 장바구니 상품은 없어졌으므로, 추가메뉴가 생성되지 않는다. 다시 상품 구매로 돌아간다.
+ 
   ![](https://velog.velcdn.com/images/gkinfn/post/36155628-75c1-4156-bc96-a563ef8a51f9/image.PNG)
 
 9. 만약 장바구니에서 특정 상품을 빼고 싶다면, 2. 취소를 입력한 후, 취소할 상품의 번호를 입력한다.
+
   ![](https://velog.velcdn.com/images/gkinfn/post/f002d497-1bbb-4996-a411-59372400a6ad/image.PNG)
 
 10.장바구니에서 해당 상품이 삭제되고, 메인메뉴로 돌아간다. 
+
 ![](https://velog.velcdn.com/images/gkinfn/post/a4825c36-e13a-443b-80eb-0fc6ea8d39c1/image.PNG)
 
 11.다시 주문하면, 해당 상품이 삭제된 것을 확인할 수 있다.
+
  ![](https://velog.velcdn.com/images/gkinfn/post/b662681a-0be8-4455-a50f-999d3760a8f5/image.PNG)
  
 12. 5.Cancel을 입력하면, 장바구니 상품이 모두 삭제되어, 메인메뉴만 출력된다. 
@@ -497,11 +510,13 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   ![](https://velog.velcdn.com/images/gkinfn/post/9a3be02a-b610-4aed-b929-39d17cb88d26/image.PNG)
 
 
+
 ## 7️⃣예외처리  
   
  사용자에게 번호를 입력받을 때, 메뉴에 없는 번호나, 문자를 입력하면 경고문이 뜨고, 다시 메뉴가 출력된다.  
   
   ![](https://velog.velcdn.com/images/gkinfn/post/8074bbd4-30ec-4f9f-aa48-7a8997d18c9f/image.PNG)
+
 
   
   
@@ -521,6 +536,16 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   
 
   
+
+
+ # 🎊 읽어주셔서 감사합니다.
+
+ 
+  
+ ### 💻연락처
+- Email: gkinfn@gmail.com
+- GitHub: @bopeep934
+
   
   
 
