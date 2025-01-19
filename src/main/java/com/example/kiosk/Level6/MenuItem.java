@@ -6,7 +6,7 @@ public class MenuItem {
     private String name;
     private double price;
     private String info;
-    private int count = 0;// 장바구니용 수량
+    private int count = 0;// 장바구니용 수량  여기보다는 그럼 카트가 나을까?
 
     public MenuItem(String name, double price, String info) {
         this.name = name;

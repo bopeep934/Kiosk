@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class ShoppingCart {
     private List<MenuItem> cartList = new ArrayList<>();
-    private List<MenuItem> lastCartList = new ArrayList<>();// 중복값을 제거한 장바구니 메뉴
+  //  private List<MenuItem> lastCartList = new ArrayList<>();// 중복값을 제거한 장바구니 메뉴
 
     private MenuItem cartItem;
     private double totalPrice = 0;
@@ -58,7 +58,6 @@ public class ShoppingCart {
 //        System.out.println("학생: " + discount.getDiscount();
 //        System.out.println("일반: " + discount.getDiscount();
 
-
     }
 
     public double sumPrice() {
@@ -73,7 +72,10 @@ public class ShoppingCart {
 
     public void addCartItem(MenuItem item) {
 
-        cartList.add(item);
+        if (cartList.stream().noneMatch(i -> i.equals(item))) {
+            cartList.add(item);
+        }
+        //cartList.add(item);
 
     }
 
@@ -90,13 +92,11 @@ public class ShoppingCart {
     }
 
     public void subCartMenu(int i) {
-//역시 안됨...ㅠ.ㅠ
         // lastCartList.stream().filter(item -> lastCartList.get(i - 1)).forEach(item -> item.printMenuItem2());
         //  lastCartList = lastCartList.stream().filter(item -> item != (lastCartList.get(i - 1))).collect(Collectors.toList());
         //    lastCartList = lastCartList.stream().filter(item -> item != lastCartList.get(i - 1)).collect(Collectors.toList());
-        System.out.println(lastCartList.get(i - 1).getName() + " 메뉴가 취소되었습니다.");
-
-        String subName = lastCartList.get(i - 1).getName();
+        String subName = cartList.get(i - 1).getName();
+        System.out.println(subName + " 메뉴가 취소되었습니다.");
         cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());
 //
         //   if(!item.getName().equals(subName))
@@ -108,17 +108,19 @@ public class ShoppingCart {
             item.setCount(0);
         }
         cartList.clear();
-        lastCartList.clear();
     }
 
     public void printCart() {//처음에 없는 번호 출력
 
-        lastCartList.clear();
+        IntStream.range(0, cartList.size()).forEach(i -> cartList.get(i).setNum(i + 1));//setter은 캡슐화 컨벤션에 어긋날 수 있으므로 최대한 지양
+        cartList.forEach(c -> c.printMenuItem2());
+
+    //    lastCartList.clear();
 
         //IntStream.range(0, cartList.size()).forEach(i -> cartList.get(i).setNum(i + 1));
-        cartList.stream().distinct().forEach(c -> lastCartList.add(c));
-        IntStream.range(0, lastCartList.size()).forEach(i -> lastCartList.get(i).setNum(i + 1));
-        lastCartList.forEach(c -> c.printMenuItem2());
+     //   cartList.stream().distinct().forEach(c -> lastCartList.add(c));
+     //   IntStream.range(0, lastCartList.size()).forEach(i -> lastCartList.get(i).setNum(i + 1));//setter은 캡슐화 컨벤션에 어긋날 수 있으므로 최대한 지양
+//lastCartList.forEach(c -> c.printMenuItem2());
 
 
 //        System.out.println("////");
