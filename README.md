@@ -63,7 +63,7 @@
             System.out.println("프로그램을 종료합니다.");
 ```
 
-####  - 실행결과
+####  <실행결과>
 
 ![](https://velog.velcdn.com/images/gkinfn/post/11bf84f8-0b76-4afd-be77-cceca387dedb/image.PNG)
 
@@ -184,7 +184,7 @@
         Kiosk kiosk=new Kiosk(menuItems);//메뉴 리스트를 키오스크에 추가
 ```
 
-### Lv2, Lv3 실행결과
+### <Lv2, Lv3 실행결과>
 
     
    ![](https://velog.velcdn.com/images/gkinfn/post/03955444-5bae-420e-8503-25182a857d3c/image.PNG)
@@ -265,7 +265,7 @@
   
 ```
   
-###  Lv. 4, Lv.5 실행 결과
+###  <Lv. 4, Lv.5 실행 결과>
   ![](https://velog.velcdn.com/images/gkinfn/post/00fdfb96-373f-4b29-aeda-83082cf97ba4/image.PNG)
 
   
