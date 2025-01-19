@@ -63,7 +63,7 @@
             System.out.println("프로그램을 종료합니다.");
 ```
 
-####  <실행결과>
+###  <실행결과>
 
 ![](https://velog.velcdn.com/images/gkinfn/post/11bf84f8-0b76-4afd-be77-cceca387dedb/image.PNG)
 
