@@ -461,14 +461,13 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   
 ![](https://velog.velcdn.com/images/gkinfn/post/15a67434-c180-47b2-9e7f-fb0f6a9abf3e/image.PNG)
 
-
 2.상품 메뉴에서 주문하고 싶은 상품의 번호를 입력한다.
 
   
 ![](https://velog.velcdn.com/images/gkinfn/post/0cb91355-54b4-4a30-80bb-9460684e1a97/image.PNG)
 
-
 3.상품의 상세정보를 확인 후, 장바구니에 담을지를 선택한다.
+
   
 ![](https://velog.velcdn.com/images/gkinfn/post/e5778818-5f85-4d6f-a45c-9827e470dfee/image.PNG)
 
@@ -479,54 +478,45 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   
 ![](https://velog.velcdn.com/images/gkinfn/post/c24480ce-b2a6-4c04-b1ef-fb16ba9fb563/image.PNG)
 
-
 5.주문하고 싶은 상품을 모두 주문 후, 0.뒤로가기 번호를 입력하면(0번을 입력할 때까지 계속 반복) 메인메뉴가 출력된다. 장바구니에 상품이 담긴 경우, 추가 메뉴가 생성된다.
 
 
 ![](https://velog.velcdn.com/images/gkinfn/post/30e70109-0db2-422f-911b-4de2dd0d4720/image.PNG)
-
 
 6. 4.주문하고 번호를 입력하면, 장바구니에 담긴 상품명과 수량, 총 금액이 순서대로 뜨고 사용자는 주문할지 선택한다.
 
  
 ![](https://velog.velcdn.com/images/gkinfn/post/08cedeb2-34fe-4016-893b-7183dee2a251/image.PNG)
 
-
 7. 사용자 유형에 따른 할인율이 나오고, 사용자가 번호를 입력하면 총 금액에서 할인율이 적용된 금액으로 주문이 된다. 
 
   
 ![](https://velog.velcdn.com/images/gkinfn/post/9a4c687f-d54c-4356-b5c5-5403e6913ccf/image.PNG)
 
-  
 8. 주문이 끝나면, 다시 메인메뉴가 출력되고, 장바구니 상품은 없어졌으므로, 추가메뉴가 생성되지 않는다. 다시 상품 구매로 돌아간다.
 
  
 ![](https://velog.velcdn.com/images/gkinfn/post/36155628-75c1-4156-bc96-a563ef8a51f9/image.PNG)
-
 
 9. 만약 장바구니에서 특정 상품을 빼고 싶다면, 2. 취소를 입력한 후, 취소할 상품의 번호를 입력한다.
 
 
 ![](https://velog.velcdn.com/images/gkinfn/post/f002d497-1bbb-4996-a411-59372400a6ad/image.PNG)
 
-
 10.장바구니에서 해당 상품이 삭제되고, 메인메뉴로 돌아간다. 
 
 
 ![](https://velog.velcdn.com/images/gkinfn/post/a4825c36-e13a-443b-80eb-0fc6ea8d39c1/image.PNG)
-
 
 11.다시 주문하면, 해당 상품이 삭제된 것을 확인할 수 있다.
 
 
 ![](https://velog.velcdn.com/images/gkinfn/post/b662681a-0be8-4455-a50f-999d3760a8f5/image.PNG)
 
- 
 12. 5.Cancel을 입력하면, 장바구니 상품이 모두 삭제되어, 메인메뉴만 출력된다. 
 
 
 ![](https://velog.velcdn.com/images/gkinfn/post/f0d7eb9a-4995-441d-8ba5-76f288e5d991/image.PNG)
-
   
 13. 0. 종료를 입력하면 키오스크 프로그램이 종료된다
 
@@ -574,14 +564,3 @@ cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).col
   
   
 
-
-
-
-
- # 🎊 읽어주셔서 감사합니다.
-
- 
-  
- ### 💻연락처
-- Email: gkinfn@gmail.com
-- GitHub: @bopeep934
