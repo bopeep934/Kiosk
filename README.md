@@ -27,7 +27,7 @@
 - [ ]  **햄버거 메뉴 출력 및 선택하기**
     - [ ]  `Scanner`를 사용하여 여러 햄버거 메뉴를 출력합니다.
     
-    ```java 
+```java 
             System.out.println("[ SHAKESHACK MENU ]");
 
             for (int i = 0; i < menu.size(); i++) {//메뉴 출력
@@ -36,10 +36,11 @@
                 } else {
                     System.out.println(i+1 + "." + menu.get(i));//그 외에는 번호를 붙여서 출력(실제 인덱스는 0번부터이므로 +1)
                 }
-            }```
+            }
+```
     
     - [ ]  제시된 메뉴 중 입력받은 숫자에 따라 다른 로직을 실행하는 코드를 작성합니다.
-    ```java
+```java
            System.out.println("수정하고 싶은 메뉴 번호를 입력하세요. 종료는 0");
 
             num = sc.nextInt();//수정번호 입력받아서
@@ -50,16 +51,17 @@
                 System.out.println("수정할 햄버거 정보를 입력하세요.");
                 a = sc2.nextLine();
                 menu.set(num - 1, a);//그 외에는 수정
-            }```
+            }
+```
             
     - [ ]  반복문을 이용해서 특정 번호가 입력되면 프로그램을 종료합니다.
-    ```java
+```java
            if (num == 0)//0번이면 종료
                 break; 
               ...
                 
             System.out.println("프로그램을 종료합니다.");
-     ```
+```
 
 ####  - 실행결과
 
@@ -93,7 +95,7 @@
        
         
 ```java
- public static void main(String[] args){
+    public static void main(String[] args){
  
  
         MenuItem m1=new MenuItem("ShackBurger" ,6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
@@ -105,7 +107,7 @@
 - [ ]  `List`를 선언하여 여러 `MenuItem`을 추가합니다.
    
 ```java
-        List<MenuItem> menuItems = new ArrayList<>();
+    List<MenuItem> menuItems = new ArrayList<>();
 ```
 
         
@@ -138,7 +140,7 @@
      
 
 ```java 
-      public class Kiosk {
+     public class Kiosk {
             
          ...
 ```
@@ -155,7 +157,7 @@
 - [ ]  `main` 함수에서 관리하던 입력과 반복문 로직은 이제 `start` 함수를 만들어 관리합니다.
  
 ```java
-   public void start() {
+     public void start() {
         Scanner sc = new Scanner(System.in);
         while (true) {
             num = 1;//1번부터 시작
@@ -170,13 +172,13 @@
   
 - [ ]  `List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.
 ```java 
-    public Kiosk(List menuItems) {
+     public Kiosk(List menuItems) {
         this.menuItems = menuItems;
     }
 ``` 
 - [ ]  `Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니다.
 ```java
-      public static void main(String[] args){
+     public static void main(String[] args){
     ....
 
         Kiosk kiosk=new Kiosk(menuItems);//메뉴 리스트를 키오스크에 추가
@@ -203,7 +205,7 @@
 
 
 ```java
-public class Menu {
+     public class Menu {
 
   
   |자료형|역할|
@@ -224,12 +226,12 @@ public class Menu {
 - [ ]  `MenuItem`, `Menu` 그리고 `Kiosk` 클래스의 필드에 직접 접근하지 못하도록 설정합니다.
   
 ```java
- private 명령어 붙이기
+     <private 명령어 붙이기>
 ```
 - [ ]  Getter와 Setter 메서드를 사용해 데이터를 관리합니다.
 
 ```java
-public class MenuItem {
+   public class MenuItem {
   
      private String name;
      private double price;
@@ -384,11 +386,11 @@ System.out.println("W " + sum);
         - [ ]  예시 : 군인, 학생, 일반인
                                                           
 ```java 
-public enum Discount {
-    NATIONALMERIT("국가유공자", 10),
-    SOIDIER("군인", 5),
-    STUDENT("학생", 3),
-    GENERAL("일반", 0);
+    public enum Discount {
+     NATIONALMERIT("국가유공자", 10),
+     SOIDIER("군인", 5),
+     STUDENT("학생", 3),
+     GENERAL("일반", 0);
 
 ```                                                
                                                           
@@ -396,7 +398,7 @@ public enum Discount {
 
 
 ```java 
- public double disCount(int identity) {
+     public double disCount(int identity) {
 
         Discount ds = Discount.GENERAL;
         switch (identity) {
@@ -425,7 +427,7 @@ public enum Discount {
 - [ ]  **람다 & 스트림을 활용한 장바구니 조회 기능**
     - [ ]  기존에 생성한 Menu의 MenuItem을 조회 할 때 스트림을 사용하여 출력하도록 수정
 ```java
- public void printCart() {//처음에 없는 번호 출력
+     public void printCart() {//처음에 없는 번호 출력
 
        ...
         cartList.forEach(c -> c.printMenuItem2());
@@ -433,8 +435,8 @@ public enum Discount {
                                                           
 - [ ]  기존 장바구니에서 특정 메뉴 빼기 기능을 통한 스트림 활용
 ```java
-String subName = cartList.get(i - 1).getName();
-cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());
+     String subName = cartList.get(i - 1).getName();
+     cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());
 ```
 
   
