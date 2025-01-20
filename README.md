@@ -138,7 +138,6 @@
     
     - [ ]  `MenuItem`을 관리하는 리스트가 필드로 존재합니다.
      
-
 ```java 
      public class Kiosk {
             
@@ -146,7 +145,7 @@
 ```
 
 
-  |자료형|역할|
+  |자료형 | 역할|
   |--|--|
   |menuItems : List<MenuItem> | 계산 결과값을 저장|
   |k : int  | 사용자 입력 값 변수 |  
