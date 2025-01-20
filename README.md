@@ -449,11 +449,12 @@ System.out.println("W " + sum);
 
   
  ## 5️⃣ 다이어그램 
-  1) 필수과제 클래스 다이어그램
-  
-  2) 도전과제 클래스 다이어그램
-  
-  
+ 1) 도전과제 클래스 다이어그램
+  ![](https://velog.velcdn.com/images/gkinfn/post/8e0de4ae-e7c1-4c7e-ac6f-9f83c1ec66c3/image.jpg)
+
+       
+ 2) 시퀀스 다이어그램     
+![](https://velog.velcdn.com/images/gkinfn/post/ed368623-6e3b-415b-b3a4-c4f7b17874e5/image.jpg)
   
   
   
