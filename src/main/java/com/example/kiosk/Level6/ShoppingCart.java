@@ -15,7 +15,19 @@ public class ShoppingCart {
 
 
     public ShoppingCart() {
+    }
 
+    public List getCartMenu() {
+
+        if (cartList.size() > 0)
+            return cartList;
+        else
+            return null;
+    }
+
+    public void setCartMenu(List<MenuItem> cartMenu) {
+
+        this.cartList = cartMenu;
     }
 
     public double disCount(int identity) {
@@ -79,28 +91,11 @@ public class ShoppingCart {
 
     }
 
-    public List getCartMenu() {
-
-        if (cartList.size() > 0)
-            return cartList;
-        else
-            return null;
-    }
-
-    public void setCartMenu(List<MenuItem> cartMenu) {
-        this.cartList = cartMenu;
-    }
 
     public void subCartMenu(int i) {
-        // lastCartList.stream().filter(item -> lastCartList.get(i - 1)).forEach(item -> item.printMenuItem2());
-        //  lastCartList = lastCartList.stream().filter(item -> item != (lastCartList.get(i - 1))).collect(Collectors.toList());
-        //    lastCartList = lastCartList.stream().filter(item -> item != lastCartList.get(i - 1)).collect(Collectors.toList());
         String subName = cartList.get(i - 1).getName();
-        System.out.println(subName + " 메뉴가 취소되었습니다.");
         cartList = cartList.stream().filter(item -> !item.getName().equals(subName)).collect(Collectors.toList());
-//
-        //   if(!item.getName().equals(subName))
-
+        System.out.println(subName + " 메뉴가 취소되었습니다.");
     }
 
     public void removeCart() {
@@ -114,30 +109,5 @@ public class ShoppingCart {
 
         IntStream.range(0, cartList.size()).forEach(i -> cartList.get(i).setNum(i + 1));//setter은 캡슐화 컨벤션에 어긋날 수 있으므로 최대한 지양
         cartList.forEach(c -> c.printMenuItem2());
-
-    //    lastCartList.clear();
-
-        //IntStream.range(0, cartList.size()).forEach(i -> cartList.get(i).setNum(i + 1));
-     //   cartList.stream().distinct().forEach(c -> lastCartList.add(c));
-     //   IntStream.range(0, lastCartList.size()).forEach(i -> lastCartList.get(i).setNum(i + 1));//setter은 캡슐화 컨벤션에 어긋날 수 있으므로 최대한 지양
-//lastCartList.forEach(c -> c.printMenuItem2());
-
-
-//        System.out.println("////");
-//        for (int i = 0; i < lastCartList.size(); i++) {
-//            System.out.println(lastCartList.get(i).getNum() + " " + lastCartList.get(i).getName());
-//        }
-
-
-//  cartList.stream().filter(c -> !lastCartList.contains(c)).forEach(c -> lastCartList.add(c));
-//        for (MenuItem item : cartList) {
-//            if (!lastCartList.contains(item))
-//                lastCartList.add(item);
-//        }
-
-//  lastCartList.stream().forEach(c -> c.printMenuItem2());
-//        for (MenuItem item : lastCartList) {
-//            item.printMenuItem2();
-//        }
     }
 }

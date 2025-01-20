@@ -26,7 +26,7 @@ public class Kiosk {
                 num++;
             }
             System.out.println("0. 종료");
-            System.out.println("num:" + num);
+      //      System.out.println("num:" + num);
 
             try {
                 System.out.println("보고 싶은 메인메뉴 번호를 입력하세요.");//사용자에게 입력받기

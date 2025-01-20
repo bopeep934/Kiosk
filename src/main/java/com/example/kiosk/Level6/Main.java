@@ -15,6 +15,7 @@ public class Main {
     }
 
     public static List makeMenu() {//메뉴 만들기. 왜 static을 붙여야 하나요?
+0
 
         List<MenuItem> burgers = new ArrayList<>();
         List<MenuItem> drinks = new ArrayList<>();

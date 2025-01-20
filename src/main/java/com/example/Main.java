@@ -29,6 +29,8 @@ public class Main {
         //이걸 풀자면 for(int i=0;i<list.size();i++)
         //. System.out.println(a.get(i)); 이거지?
         // a.forEach(System.out::println); OK
+
+
     }
 }
 
