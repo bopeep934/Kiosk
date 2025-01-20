@@ -454,8 +454,8 @@ System.out.println("W " + sum);
 
        
  2) 시퀀스 다이어그램     
-![](https://velog.velcdn.com/images/gkinfn/post/ed368623-6e3b-415b-b3a4-c4f7b17874e5/image.jpg)
-  
+![](https://velog.velcdn.com/images/gkinfn/post/991306e3-17a5-4eff-a07b-a6f8c0a1cb9c/image.jpg)  
+
   
   
  ## 6️⃣ 프로그램 사용법
