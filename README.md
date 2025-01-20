@@ -203,15 +203,16 @@
     - [ ]  메뉴 카테고리 이름을 반환하는 메서드가 구현되어야 합니다.
 
 
+
 ```java
      public class Menu {
 
-  
+  ```  
   |자료형|역할|
   |--|--|
   |name : String  | 메뉴 카테고리 명 | 
   |menuItems : List<MenuItem> | 메뉴의 상품 배열|
-```  
+
 ```java   
   ....
       public String getName() {
@@ -219,7 +220,7 @@
     }
 
 ```
-  
+
 ### Lv 5. 캡슐화 적용하기
 
 - [ ]  `MenuItem`, `Menu` 그리고 `Kiosk` 클래스의 필드에 직접 접근하지 못하도록 설정합니다.
